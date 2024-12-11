@@ -1,0 +1,249 @@
+:root {
+  --color-primary: #FF6B6B;
+  --color-secondary: #4ECDC4;
+  --color-background: #F7FFF7;
+  --color-text: #1A535C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Barra Superior */
+.barra-superior {
+  background-color: red; /* Barra superior completamente roja */
+  color: white; /* El texto es blanco */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: barra-superior-movimiento 10s infinite linear;
+}
+
+@keyframes barra-superior-movimiento {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+.recojo-tienda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flecha {
+  width: 20px;
+  height: 20px;
+  animation: flecha-movimiento 2s infinite ease-in-out;
+}
+
+@keyframes flecha-movimiento {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo span {
+  margin-left: 10px;
+}
+
+.busqueda {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.busqueda input {
+  border: none;
+  padding: 10px;
+  background: transparent;
+  width: 250px;
+}
+
+.busqueda button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar-derecha ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  align-items: center;
+}
+
+.navbar-derecha a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Barra de Categorías */
+.categorias-barra {
+  background-color: var(--color-primary);
+  padding: 10px 20px;
+}
+
+.categorias-barra ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: center;
+}
+
+.categorias-barra a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.categorias-barra a:hover {
+  color: var(--color-secondary);
+}
+
+/* Banner */
+.banner {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-contenido {
+  flex: 1 1 60%;
+  text-align: left;
+}
+
+.imagen-contenedor {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.imagen-upload {
+  background-color: white;
+  color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagen-subida {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Categorías */
+.categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.categoria-item {
+  text-align: center;
+}
+
+.categoria-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.categoria-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .barra-superior {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  .navbar-izquierda, 
+  .navbar-derecha {
+      width: 100%;
+      text-align: center;
+  }
+
+  .busqueda input {
+      width: 100%;
+  }
+
+  .categorias-barra ul {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .banner {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .banner-contenido {
+      flex-basis: auto;
+  }
+
+  .imagen-contenedor {
+      flex-basis: auto;
+  }
+}
